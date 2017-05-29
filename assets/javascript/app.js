@@ -37,13 +37,21 @@ $(document).ready(function() {
 	var askedQuestions = [];
 	var answers = [];
 	var answerHolder = [];
+	var correctAnimal = "";
+	var correctValue = 0;
 
 
 	$('#sections').on('click', 'button.startButton', function() {
 		generateQuestion();
 	});
 
-	$('#sections').on('click', 'button', function() {
+	$('#sections').on('click', 'button.wrongButton', function() {
+		wrongAns++
+		generateQuestion();
+	});
+
+	$('#sections').on('click', 'button.correctButton', function() {
+		correctAns++
 		generateQuestion();
 	});
 
@@ -61,12 +69,17 @@ $(document).ready(function() {
 			if ($.inArray(randNum, askedQuestions) === -1) {
 				$('#sections').html('<h1>' + givenQuestion + '</h1><br>');
 				answers = [];
-				answers.push(animals[randNum].name);
+				correctAnimal = animals[randNum].name;
+				answers.push(correctAnimal);
 				generateWrongAnswers(randNum);
-				$('#sections').append('<button class="btn btn-success btn-lg ans1Button"><span><h1>' + answers[0] + '</h1></span></button><br>');
-				$('#sections').append('<button class="btn btn-success btn-lg ans2Button"><span><h1>' + answers[1] + '</h1></span></button><br>');
-				$('#sections').append('<button class="btn btn-success btn-lg ans3Button"><span><h1>' + answers[2] + '</h1></span></button><br>');
-				$('#sections').append('<button class="btn btn-success btn-lg ans4Button"><span><h1>' + answers[3] + '</h1></span></button><br>');
+				correctValue = $.inArray(correctAnimal, answers);
+				for (i = 0; i < answers.length; i++) {
+				    if (i === correctValue) {
+				    	$('#sections').append('<button class="btn btn-success btn-lg correctButton"><span><h1>' + answers[i] + '</h1></span></button><br>');
+				    } else {
+				    	$('#sections').append('<button class="btn btn-success btn-lg wrongButton"><span><h1>' + answers[i] + '</h1></span></button><br>');
+				    }
+				}
 				askedQuestions.push(randNum);
 			} else {
 				generateQuestion();
