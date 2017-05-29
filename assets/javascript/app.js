@@ -157,7 +157,7 @@ $(document).ready(function() {
 	}
 
 	function pauseAnswer() {
-		stopTime = 5;
+		stopTime = 3;
 		clearInterval(intervalId);
 		clockRunning = false;
 		if (!answerRunning) {
