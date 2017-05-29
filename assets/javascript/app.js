@@ -1,14 +1,13 @@
 $(document).ready(function() {
 	var animals = [
-	{name: "Moose", question: "Moose are herbivores (plant-eaters) and they like to eat flowering plants, shrubs, leaves and small branches of the trees. During the summer, they eat plants from the river, like pondweed and pond lilies."}, 
-	{name: "Zebra", question: "Zebras are very fast-moving animals, and can reach speeds of up to 40mph when galloping across the plains. This is just fast enough to outpace predators such as lions. Foals can run with the herd within a few hours of birth."}, 
-	{name: "Giraffe", question: "A giraffe's neck is too short to reach the ground. As a result, it has to awkwardly spread its front legs or kneel to reach the ground for a drink of water."}, 
-	{name: "Barn Owl", question: "Barn Owls have very long legs, toes and talons to help them to catch prey hidden under long grass."}, 
-	// {name: "Cuttlefish", question: "Cuttlefish can change to be almost any color—even though they're colorblind."}, 
-	// {name: "Leafy Seadragon", question: "The Leafy Sea Dragon has no known predators. Their leafy camouflage and spiny fins keep large fish from snacking on them."}, 
-	// {name: "Sun Bear", question: "A sun bear's diet consists of lizards, little birds, rodents, insects, termites, fruit and honey."}, 
-	// {name: "Komondor Dog", question: "The Komondor dog was bred to guard livestock."}, 
-	// {name: "Angora Rabbit", question: "There are four types of Angora rabbits: English, French, Giant, and Satin."}, 
+	{name: "Moose", question: "These large northern herbivores like to eat flowering plants, shrubs, leaves and small tree branches. During the summer, they eat plants from the river, like pondweed and pond lilies."}, 
+	{name: "Zebra", question: "These very fast-moving striped animals, can reach speeds of up to 40mph when galloping across the African  plains."}, 
+	{name: "Giraffe", question: "The world's tallest animal  has a neck which is too short to reach the ground. As a result, it has to awkwardly spread its front legs or kneel for a drink of water."}, 
+	{name: "Barn Owl", question: "This bird of prey has very long legs, toes and talons to help them to catch prey hidden under long grass."}, 
+	{name: "Cuttlefish", question: "This cephalopod can change to be almost any color—even though they're colorblind."}, 
+	{name: "Leafy Seadragon", question: "This animal has no known predators. Their leafy camouflage and spiny fins keep large fish from snacking on them."}, 
+	{name: "Sun Bear", question: "This omnivore's diet consists of lizards, little birds, rodents, insects, termites, fruit and honey."}, 
+	{name: "Komondor Dog", question: "This animal was bred by humans to guard livestock."}, 
 	// {name: "Red Panda", question: "Red Panda's are slightly bigger than a domestic cat."}, 
 	// {name: "Three Toed Sloth", question: "Three Toed Sloth's fur hangs upside down, running from their stomachs to their backs."}, 
 	// {name: "Emperor Tamarin", question: "There are two subspecies of Emperor tamarin found in the south west Amazon Basin."}, 
@@ -44,7 +43,7 @@ $(document).ready(function() {
 	var intervalIdAnswer;
 	var clockRunning = false;
 	var answerRuning = false;
-	var stopTime = 10;
+	var stopTime = 30;
 
 	$('#sections').on('click', 'button.startButton', function() {
 		generateQuestion();
@@ -77,7 +76,7 @@ $(document).ready(function() {
 
 	function generateQuestion() {
 		if (askedQuestions.length < animals.length) {
-			stopTime = 10;
+			stopTime = 30;
 			$('#headSection').html('<h1>' + stopTime + ' seconds</h1><br>');
 			startClock();
 			var randNum = 0;
@@ -138,7 +137,7 @@ $(document).ready(function() {
 	}
 
 	function startClock() {
-		stopTime = 10;
+		stopTime = 30;
 		clearInterval(intervalIdAnswer);
 		answerRunning = false;
 		if (!clockRunning) {
