@@ -37,7 +37,7 @@ p {
 	border: none;
 }
 
-.headSections {
+#headSection {
 	text-align: center;
 	border: 2px solid white;
 
@@ -46,26 +46,4 @@ p {
 
 .row {
 	padding: 2px;
-}
-
-#mobileHide {
-	display: none;
-}
-
-@media screen and (max-device-width: 480px) {
-	.sections {
-		display: none;
-	}
-
-	.headSections {
-		display: none;
-	}
-
-	#mobileHide {
-		display: inherit;
-		text-align: center;
-		border: 2px solid white;
-		padding: 10px 0px 10px 0px;
-		height: 98vh;
-	}
 }
