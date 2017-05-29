@@ -43,7 +43,11 @@ $(document).ready(function() {
 		generateQuestion();
 	});
 
-	$('#sections').on('click', 'button.nextButton', function() {
+	$('#sections').on('click', 'button', function() {
+		generateQuestion();
+	});
+
+	$('#sections').on('click', 'button.restartButton', function() {
 		generateQuestion();
 	});
 
@@ -58,22 +62,26 @@ $(document).ready(function() {
 				$('#sections').html('<h1>' + givenQuestion + '</h1><br>');
 				answers = [];
 				answers.push(animals[randNum].name);
-				generateWrongAnswers();
-				$('#sections').append('<h1>' + answers + '</h1><br>');
-				$('#sections').append('<button class="btn btn-success btn-lg nextButton"><span><h1>Next Question</h1></span></button>');
+				generateWrongAnswers(randNum);
+				$('#sections').append('<button class="btn btn-success btn-lg ans1Button"><span><h1>' + answers[0] + '</h1></span></button><br>');
+				$('#sections').append('<button class="btn btn-success btn-lg ans2Button"><span><h1>' + answers[1] + '</h1></span></button><br>');
+				$('#sections').append('<button class="btn btn-success btn-lg ans3Button"><span><h1>' + answers[2] + '</h1></span></button><br>');
+				$('#sections').append('<button class="btn btn-success btn-lg ans4Button"><span><h1>' + answers[3] + '</h1></span></button><br>');
 				askedQuestions.push(randNum);
 			} else {
 				generateQuestion();
 			}
 		} else {
-			$('#sections').html('<button class="btn btn-success btn-lg startButton"><span><h1>Start Game</h1></span></button>');
+			$('#sections').html('<h1>You reached the end!</h1><p>Correct Answers: <br>Incorrect Answers: <br> Unanswered: <br></p>');
+			$('#sections').append('<button class="btn btn-success btn-lg restartButton"><span><h1>Restart</h1></span></button>');
 			askedQuestions = [];
 		}
 	}
 
-	function generateWrongAnswers() {
+	function generateWrongAnswers(currentElement) {
 		var randNum = 0;
 		var holder = [];
+		holder.push(currentElement);
 		while (answers.length < 4) {
 			randNum = Math.floor(Math.random()*animals.length);
 			if ($.inArray(randNum, holder) === -1) {

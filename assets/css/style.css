@@ -22,7 +22,7 @@ p {
 #sections {
 	text-align: center;
 	border: 2px solid white;
-	height: 90vh;
+	height: 89vh;
 	padding: 5%;
 }
 
@@ -30,6 +30,11 @@ p {
 	width: 400px;
 	height: auto;
 	border: 2px solid white;
+}
+
+.btn-success {
+	background-color: transparent;
+	border: none;
 }
 
 .headSections {
