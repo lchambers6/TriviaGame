@@ -35,6 +35,8 @@ $(document).ready(function() {
 	var correctAns = 0;
 	var wrongAns = 0;
 	var askedQuestions = [];
+	var answers = [];
+	var answerHolder = [];
 
 
 	$('#sections').on('click', 'button.startButton', function() {
@@ -52,8 +54,12 @@ $(document).ready(function() {
 			var givenQuestion = "";
 			randNum = Math.floor(Math.random()*animals.length);
 			givenQuestion = animals[randNum].question
-			if ($.inArray( randNum, askedQuestions ) === -1) {
+			if ($.inArray(randNum, askedQuestions) === -1) {
 				$('#sections').html('<h1>' + givenQuestion + '</h1><br>');
+				answers = [];
+				answers.push(animals[randNum].name);
+				generateWrongAnswers();
+				$('#sections').append('<h1>' + answers + '</h1><br>');
 				$('#sections').append('<button class="btn btn-success btn-lg nextButton"><span><h1>Next Question</h1></span></button>');
 				askedQuestions.push(randNum);
 			} else {
@@ -63,6 +69,33 @@ $(document).ready(function() {
 			$('#sections').html('<button class="btn btn-success btn-lg startButton"><span><h1>Start Game</h1></span></button>');
 			askedQuestions = [];
 		}
-		console.log(askedQuestions);
 	}
+
+	function generateWrongAnswers() {
+		var randNum = 0;
+		var holder = [];
+		while (answers.length < 4) {
+			randNum = Math.floor(Math.random()*animals.length);
+			if ($.inArray(randNum, holder) === -1) {
+				holder.push(randNum);
+				answers.push(animals[randNum].name);
+			}
+		}
+		mixAnswers();
+	}
+
+	function mixAnswers() {
+		var randNum = 0;
+		var holder = [];
+		answerHolder = [];
+	    while (answerHolder.length < 4) {
+			randNum = Math.floor(Math.random()*answers.length);
+			if ($.inArray(randNum, holder) === -1) {
+				holder.push(randNum);
+				answerHolder.push(answers[randNum]);
+			}
+		}
+		answers = answerHolder;
+	}
+
 });
