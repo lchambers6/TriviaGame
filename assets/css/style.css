@@ -1,0 +1,66 @@
+body {
+	background-image: url(../images/jungleBackground.jpg);
+	margin: auto;
+}
+
+h1 {
+	color: white;
+	font-family: 'Indie Flower', Times, Times New Roman, serif;
+	font-size: 28px;
+}
+
+p {
+	color: white;
+	font-family: 'Indie Flower', Times, Times New Roman, serif;
+	font-size: 18px;
+}
+
+.container {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+#sections {
+	text-align: center;
+	border: 2px solid white;
+	height: 90vh;
+	padding: 5%;
+}
+
+#sections img{
+	width: 400px;
+	height: auto;
+	border: 2px solid white;
+}
+
+.headSections {
+	text-align: center;
+	border: 2px solid white;
+
+	height: 10vh;
+}
+
+.row {
+	padding: 2px;
+}
+
+#mobileHide {
+	display: none;
+}
+
+@media screen and (max-device-width: 480px) {
+	.sections {
+		display: none;
+	}
+
+	.headSections {
+		display: none;
+	}
+
+	#mobileHide {
+		display: inherit;
+		text-align: center;
+		border: 2px solid white;
+		padding: 10px 0px 10px 0px;
+		height: 98vh;
+	}
+}
