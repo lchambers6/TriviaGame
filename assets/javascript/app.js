@@ -21,7 +21,7 @@ $(document).ready(function() {
 	{name: "Dumbo Octopus", question: "This animal lives on the seafloor, or hover just slightly above it at depths of 3000 to 4000 meters."}, 
 	{name: "Frill-necked Lizard", question: "This animal get their name from their brightly coloured frill that they can make stand up to make themselves look much larger to scare off predators."}, 
 	{name: "Sucker-footed Bat", question: "This flying mammal is named for the presence of small cups on its wrists and ankles."}, 
-	{name: "Pygmy Marmoset", question: "The smallest monkey in the world, this animal is between 4.75 and 6 inches in length and weight between 3.53 and 4 ounces."}, 
+	{name: "Pygmy Marmoset", question: "This animal, the smallest monkey in the world, is between 4.75 and 6 inches in length and weight between 3.53 and 4 ounces."}, 
 	{name: "Platypus", question: "This animal, found only in Australia, is one of only five mammal species that lay eggs instead of giving birth to live young."},  
 	];
 	var correctAns = 0;
